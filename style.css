@@ -3,11 +3,10 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
 
 /* Colors */
 
@@ -22,7 +21,7 @@
   --color-white: hsl(0, 0%, 100%);
 
   /* secondary colors */
-  --color-dark-cyan-hover : hsl(157, 43%, 18%);
+  --color-dark-cyan-hover: hsl(157, 43%, 18%);
 }
 
 /* Typography */
@@ -30,7 +29,7 @@
 /* Body Copy */
 
 /* Font Families and Weights */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Fraunces:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Fraunces:wght@700&display=swap");
 body {
   min-height: 100vh;
   display: flex;
@@ -46,14 +45,14 @@ main {
   justify-content: center;
   /* gap: 25px; */
   max-width: 600px;
-  max-height: 400px;
+  height: 400px;
   background-color: var(--color-white);
   border-radius: 10px;
 }
 
 img {
   flex: 1;
-  max-width: 300px;
+  min-width: 300px;
   object-fit: cover;
   border-radius: 10px 0 0 10px;
 }
@@ -70,7 +69,7 @@ article {
   display: none;
 }
 h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 14px;
   text-transform: uppercase;
@@ -79,14 +78,14 @@ h4 {
 }
 
 h1 {
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
   font-weight: 700;
   font-size: 32px;
   color: var(--color-very-dark-blue);
   line-height: 32px;
 }
 p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 23px;
@@ -109,7 +108,7 @@ p {
 }
 
 .price .original {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 23px;
@@ -118,7 +117,9 @@ p {
 }
 
 button {
-  font-family: 'Montserrat', sans-serif;
+  height: 48px;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 23px;
@@ -132,7 +133,6 @@ button {
   gap: 12px;
   text-align: center;
   padding: 16px;
-  /* width: 100%; */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -147,7 +147,36 @@ button:hover {
   background-color: var(--color-dark-cyan-hover);
 }
 
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
 
+/* Media Queries */
 
-.attribution { position: absolute; bottom: 0; font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+@media only screen and (max-width: 375px) {
+  main {
+    flex-direction: column;   
+    height: 611px;
+    width: 343px;
+  }
+
+  img {
+    border-radius: 10px 10px 0 0;
+  }
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  button {
+    transition: none;
+  }
+
+}
